@@ -6,6 +6,9 @@ var courseList = [
             {
                 name: 'discipline',
                 percent: '1'
+            },{
+                name: 'leadership',
+                percent: '0.2'
             }, {
                 name: 'tactics',
                 percent: '0.5'
