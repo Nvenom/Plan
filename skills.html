@@ -156,7 +156,7 @@ $.each(skillList, function(i,v){
 
 $.each(courseList, function(i,v){
 
-    var content='<tr><td><input type="checkbox" name="chk" data-table="#t' + i + '"></td><td>' + i + '</td><td>' + this['name'] + '</td><td><input type="number" name="clen" max="' + this['max'] + '" value="0"></td><td><table id="t' + i + '">';
+    var content='<tr><td><input type="checkbox" name="chk" data-table="#t' + i + '"></td><td>' + i + '</td><td>' + this['name'] + '</td><td><input type="number" name="clen" data-max="' + this['max'] + '" value="0"></td><td><table id="t' + i + '">';
 
     $.each(this['effect'], function(o,b){
         content = content + '<tr><td><input type="number" name="statv" data-percent="' + this['percent'] + '" data-skill="#t_' + this['name'] + '" value="0"></td><td>' + this['name'] + '</td></tr>';
@@ -189,11 +189,11 @@ function calculate_skills(){
             var disc = Number($('#t_discipline').val());
 
             var skill = $(this).data('skill');
-            var max = $(this).attr('max');
+            var max = Number($(this).data('max'));
             var incre = Number($(this).val());
             var curre = Number($(skill).val());
 
-            if(incre > max){incre = max;}
+            if(incre > max){incre = max;$(this).val(max);}
 
             if(skill !== '#t_discipline'){
 
