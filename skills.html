@@ -8,15 +8,15 @@
         input[type=number]{
             border: none;
         }
+        td{
+            font-size:12px !important;
+        }
     </style>
 </head>
 <body>
   <section class="page-header">
-    <h1 class="project-name">Waraegis</h1>
+    <h1 class="project-name">Plannning</h1>
     <h2 class="project-tagline">Agent Training Courses</h2>
-    <a href="https://github.com/Nvenom/Plan" class="btn">View on GitHub</a>
-    <a href="https://github.com/Nvenom/Plan/zipball/master" class="btn">Download .zip</a>
-    <a href="https://github.com/Nvenom/Plan/tarball/master" class="btn">Download .tar.gz</a>
   </section>
 
   <section class="main-content">
@@ -149,13 +149,13 @@
 $.each(courseList, function(i,v){
 
     var content='<tr><td><input type="checkbox" name="chk" data-table="#t' + i + '"></td><td>' + i + '</td><td>' + this['name'] + '</td><td><input type="number" name="clen" value="0"></td><td><table id="t' + i + '">';
-    
+
     $.each(this['effect'], function(o,b){
         content = content + '<tr><td><input type="number" name="statv" data-percent="' + this['percent'] + '" data-skill="#t_' + this['name'] + '" value="0"></td><td>' + this['name'] + '</td></tr>';
     });
 
     content = content + '</table></td></tr>';
-    
+
     $('#trainingcourses').append(content);
 
 });
@@ -165,7 +165,7 @@ function calculate_skills(){
     $('#main_skills').find('input').each(function() {
         $(this).val(0);
     });
-    
+
     var i = 0;
     while(i < 16){
         myRadarChart.data.datasets[0].data[i] = 0;
@@ -183,7 +183,7 @@ function calculate_skills(){
             var skill = $(this).data('skill');
             var incre = Number($(this).val());
             var curre = Number($(skill).val());
-            
+
             if(skill !== '#t_discipline'){
 
                 var roll = Math.round(Math.random() * (100 - 1));
@@ -232,10 +232,10 @@ $('[name=chk]').click(function(e) {
 
 $('[name=clen]').change(function(e) {
 
-    var clen = Number($(this).val());   
+    var clen = Number($(this).val());
 
     $(this).parent().parent().find('[name=statv]').each(function() {
-        
+
         var perc = Number($(this).data('percent'));
         var newval = Math.round(clen * perc);
         $(this).val(newval);
