@@ -189,8 +189,11 @@ function calculate_skills(){
             var disc = Number($('#t_discipline').val());
 
             var skill = $(this).data('skill');
+            var max = $(this).attr('max');
             var incre = Number($(this).val());
             var curre = Number($(skill).val());
+
+            if(incre > max){incre = max;}
 
             if(skill !== '#t_discipline'){
 
