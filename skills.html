@@ -144,11 +144,19 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 <script src="https://nvenom.github.io/Plan/javascript/chart.min.js"></script>
 <script src="https://nvenom.github.io/Plan/javascript/courselist.js"></script>
+<script src="https://nvenom.github.io/Plan/javascript/skilllist.js"></script>
 <script>
+$.each(skillList, function(i,v){
+
+    var content='<tr><td>' + this['name'] + '</td><td>' + this['description'] + '</td><td><input id="t_' + this['name'] + '" type="number" value="0" readonly></td></tr>';
+
+    $('#main_skills').append(content);
+
+});
 
 $.each(courseList, function(i,v){
 
-    var content='<tr><td><input type="checkbox" name="chk" data-table="#t' + i + '"></td><td>' + i + '</td><td>' + this['name'] + '</td><td><input type="number" name="clen" value="0"></td><td><table id="t' + i + '">';
+    var content='<tr><td><input type="checkbox" name="chk" data-table="#t' + i + '"></td><td>' + i + '</td><td>' + this['name'] + '</td><td><input type="number" name="clen" max="' + this['max'] + '" value="0"></td><td><table id="t' + i + '">';
 
     $.each(this['effect'], function(o,b){
         content = content + '<tr><td><input type="number" name="statv" data-percent="' + this['percent'] + '" data-skill="#t_' + this['name'] + '" value="0"></td><td>' + this['name'] + '</td></tr>';
