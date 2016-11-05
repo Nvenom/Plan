@@ -32,15 +32,3 @@ var skillList = [
         description: 'Find fucking waldo'
     }
 ];
-
-Stage 1 > Navigate to compound     [check] navigation > X
-Stage 2 > Break down gate          [check] explosives > X
-Stage 3 >
-
-scout
-
-
-Rescue
-Espionage
-Defense
-Aquisition
