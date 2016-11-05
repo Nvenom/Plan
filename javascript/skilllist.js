@@ -2,12 +2,16 @@ var skillList = [
     {
         name: 'discipline',
         description: 'When a task is failed this will be evaluated to see the agents composure'
+        for every 30 days + 1% chance of injury
     },{
         name: 'leadership',
         description: ''
     },{
         name: 'tactics',
         description: ''
+    },{
+        name: 'conditioning',
+        description: 'They can break your fingers but not your spirit!'
     },{
         name: 'marksmanship',
         description: ''
@@ -18,16 +22,25 @@ var skillList = [
         name: 'perception',
         description: ''
     },{
-        name: '7',
+        name: 'persuasion',
         description: ''
     },{
-        name: '8',
-        description: ''
+        name: 'explosives',
+        description: 'effectiveness with explosives'
     },{
-        name: '9',
-        description: ''
-    },{
-        name: '10',
-        description: ''
+        name: 'navigation',
+        description: 'Find fucking waldo'
     }
 ];
+
+Stage 1 > Navigate to compound     [check] navigation > X
+Stage 2 > Break down gate          [check] explosives > X
+Stage 3 >
+
+scout
+
+
+Rescue
+Espionage
+Defense
+Aquisition
