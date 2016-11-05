@@ -2,7 +2,6 @@ var skillList = [
     {
         name: 'discipline',
         description: 'When a task is failed this will be evaluated to see the agents composure'
-        for every 30 days + 1% chance of injury
     },{
         name: 'leadership',
         description: ''
